@@ -1,10 +1,9 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+
+import backgroundImage from '../../../assets/img/background-login.png';
+
+import * as S from './styles';
 
 export function SigIn() {
-  return (
-    <View>
-      <Text>oi</Text>
-    </View>
-  );
+  return <S.Container source={backgroundImage}></S.Container>;
 }
