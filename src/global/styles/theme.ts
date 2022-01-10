@@ -5,7 +5,7 @@ export default {
     text: '#333333',
     light_text: '#fff',
     detail: '#B22E6F',
-
+    description: '#999999',
     opacity_light_tex: 'rgba(255, 255, 255, 0.5)',
     opacity_background: 'rgba(0, 0, 0, 0.32)',
   },
