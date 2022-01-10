@@ -10,13 +10,11 @@ import { AuthRoutes } from './auth.routes';
 export function Routes() {
   const { user, loading } = useAuth();
 
-  console.log(user);
-
   return loading ? (
     <ActivityIndicator />
   ) : (
     <NavigationContainer>
-      {!!user && user?.id ? <AppRoutes /> : <AuthRoutes />}
+      {!!user ? <AppRoutes /> : <AuthRoutes />}
     </NavigationContainer>
   );
 }
