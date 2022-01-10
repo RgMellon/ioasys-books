@@ -13,26 +13,48 @@ export const Container = styled.View`
   ${({ theme }) => css`
     background: ${theme.colors.background};
     flex: 1;
-
-    position: relative;
+    padding: 20px;
   `}
 `;
 
-export const Header = styled.ImageBackground`
+export const WrapperFilter = styled.View`
+  width: 100%;
+  margin-bottom: 32px;
+
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const ContainerSearch = styled.View`
   ${({ theme }) => css`
-    width: ${windowWidth}px;
-    margin-left: -20px;
-    height: 220px;
-    background: ${theme.colors.background};
+    width: 80%;
+    border: 1px;
+    border-color: ${theme.colors.opacity_background};
+    border-radius: 2px;
+    padding: 12px 14px;
+
+    flex-direction: row;
+    align-items: center;
   `}
 `;
 
-export const Title = styled.Text`
+export const SearchInput = styled.TextInput`
   ${({ theme }) => css`
+    width: 80%;
+    flex: 1;
     color: ${theme.colors.text};
-    font-size: 32px;
-    line-height: 38px;
-    font-weight: bold;
-    margin-top: -70px;
   `}
+`;
+
+export const ButtonFilter = styled.TouchableOpacity`
+  width: 48px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const FilterImage = styled.Image`
+  width: 20px;
+  height: 20px;
 `;
