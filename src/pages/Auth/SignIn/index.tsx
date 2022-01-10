@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import { Alert } from 'react-native';
+
+import * as Yup from 'yup';
 
 import { Input } from '../../../components/Input';
 import { Button } from '../../../components/Button';
 
 import { useAuth } from '../../../hooks/auth';
+
 import backgroundImage from '../../../assets/img/background-login.png';
+import whiteLogo from '../../../assets/img/white_logo.png';
 
 import * as S from './styles';
 
@@ -16,28 +21,30 @@ export function SigIn() {
 
   async function handleSignIn() {
     try {
-      //  const schema = Yup.object().shape({
-      //    email: Yup.string()
-      //      .required('E-mail obrigatório')
-      //      .email('Digite um e-mail válido'),
+      const schema = Yup.object().shape({
+        email: Yup.string()
+          .required('E-mail obrigatório')
+          .email('Digite um e-mail válido'),
 
-      //    password: Yup.string().required('Senha obrigatória'),
-      //  });
+        password: Yup.string().required('Senha obrigatória'),
+      });
 
-      //  await schema.validate({ email, password });
+      await schema.validate({ email, password });
 
       signIn({ email, password });
     } catch (err) {
-      //  if (err instanceof Yup.ValidationError) {
-      //    Alert.alert('Opa', err.message);
-      //  } else {
-      //    Alert.alert('Erro na autenticação', 'Ocorreu um erro ao fazer login');
-      //  }
+      if (err instanceof Yup.ValidationError) {
+        Alert.alert('Opa', err.message);
+      } else {
+        Alert.alert('Erro na autenticação', 'Ocorreu um erro ao fazer login');
+      }
     }
   }
 
   return (
     <S.Container source={backgroundImage}>
+      <S.WhiteLogo source={whiteLogo} />
+
       <Input
         label="E-mail"
         keyboardType="email-address"

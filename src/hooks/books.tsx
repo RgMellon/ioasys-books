@@ -5,7 +5,7 @@ type BookContextData = {
   books: BookResponse[];
   booksWithoutFilter: BookResponse[];
   loadBooks: boolean;
-  getBooks(): Promise<void>;
+  getBooks(page?: string): Promise<void>;
   setBooks(book: BookResponse[]): void;
 };
 

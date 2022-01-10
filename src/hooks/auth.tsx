@@ -67,8 +67,8 @@ function AuthProvider({ children }: AuthProviderProps) {
   async function signIn({ email, password }: SignInCredentials) {
     try {
       const response = await api.post('/auth/sign-in', {
-        email: 'desafio@ioasys.com.br',
-        password: '12341234',
+        email,
+        password,
       });
 
       const user = response.data;

@@ -15,27 +15,18 @@
 
 ## 🤔 Sobre
 
-Projeto **Pokedex**, projeto feito para listar os pokemons da api pokeapi.
-
-Layout baseado [Nesse projest](https://www.behance.net/gallery/95727849/Pokdex-App/modules/552909481)
+Projeto **Ioasys Books**.
 
 ---
 
 ## 📱 Preview do projeto
 
-Segue o preview em video do projeto
-
-<div>
-<video width="200" autoplay="true" loop="true" controls src="https://user-images.githubusercontent.com/29661994/147887973-97357393-bf4f-4103-a48a-33b63bb91841.mp4">
-</video>
-</div>
-
 segue alguns prints do projeto
 
 <div>
-  <img style="margin: 5px" alt="login" src="https://i.imgur.com/hWZCREJ.jpg" width="200">
-  <img style="margin: 5px" alt="register" src="https://i.imgur.com/9shBv0i.jpg" width="200">
-  <img style="margin: 5px" alt="dashboard" src="https://i.imgur.com/uaCglKD.jpg" width="200">
+  <img style="margin: 5px" alt="login" src="https://i.imgur.com/g3h75q6.jpg" width="200">
+  <img style="margin: 5px" alt="register" src="https://i.imgur.com/gwzcuLI.jpg" width="200">
+  <img style="margin: 5px" alt="dashboard" src="https://i.imgur.com/NdcHZii.jpg" width="200">
 </div>
 
 ---
@@ -75,13 +66,15 @@ O projeto foi feito utilizando das seguintes tecnologias
 
 ## 💻 Funcionalidades
 
-- Listagem de pokemons da api
+- Listagem de livros
 
-- Visualizar detalhes do pokemon
+- Login / Logout
 
-- Listar hp, attack e etc
+- Filtragem de livros por Ano e categoria
 
-- Listar Habilidades
+- Busca por Título do livros;
+
+- Scroll Infinito
 
 ## ⬇ Download
 

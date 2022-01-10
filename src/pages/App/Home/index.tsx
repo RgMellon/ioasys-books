@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Modal, FlatList, Alert } from 'react-native';
+import debounce from 'lodash.debounce';
 import { Feather } from '@expo/vector-icons';
 
 import { CardBook } from '../../../components/CardBooks';
@@ -48,25 +49,44 @@ export function Home() {
   function handlePaginate() {
     const currentPage = page + 1;
     setPage(currentPage);
-    getBooks(currentPage);
+    getBooks(String(currentPage));
   }
+
+  const makeSearch = useCallback(
+    search => {
+      try {
+        let searchValue = search.toLowerCase();
+
+        const filteredValues = books.filter(book => {
+          const bookTitleLower = book.title.toLowerCase();
+
+          return bookTitleLower.indexOf(searchValue) > -1;
+        });
+
+        if (!search) {
+          setBooks(booksWithoutFilter);
+          return;
+        }
+
+        setBooks(filteredValues);
+      } catch (error) {
+        alert('error');
+      }
+    },
+    [books, booksWithoutFilter],
+  );
+
+  const debouncedMethod = useMemo(
+    () =>
+      debounce(arg => {
+        makeSearch(arg);
+      }, 1500),
+    [makeSearch],
+  );
 
   function handleSearchText(text: string) {
     setInput(text);
-    let searchValue = text.toLowerCase();
-
-    const filteredValues = books.filter(book => {
-      const bookTitleLower = book.title.toLowerCase();
-
-      return bookTitleLower.indexOf(searchValue) > -1;
-    });
-
-    if (!text) {
-      setBooks(booksWithoutFilter);
-      return;
-    }
-
-    setBooks(filteredValues);
+    debouncedMethod(text);
   }
 
   return (
@@ -91,7 +111,7 @@ export function Home() {
                   <S.SearchInput
                     placeholder="Procure um livro"
                     onChangeText={text => handleSearchText(text)}
-                    searchValue={input}
+                    value={input}
                     returnKeyType="search"
                   />
                   <Feather name="search" size={18} color="#333333" />

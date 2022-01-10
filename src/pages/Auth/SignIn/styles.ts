@@ -10,3 +10,8 @@ export const Container = styled.ImageBackground`
 export const Wrapper = styled.View`
   margin-top: 16px;
 `;
+
+export const WhiteLogo = styled.Image`
+  width: 200px;
+  margin-bottom: 50px;
+`;
