@@ -4,7 +4,7 @@ export const Container = styled.TouchableOpacity`
   ${({ theme }) => css`
     width: 85px;
     height: 36px;
-    background-color: ${theme.colors.background};
+    background-color: ${theme.colors.secondary};
 
     border-radius: 44px;
     justify-content: center;
