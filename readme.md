@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Logo" src="https://i.imgur.com/mdRn8Hr.png" width="100%">
+  <img alt="Logo" src="https://i.imgur.com/m9OgwMI.png" width="100%">
 </h1>
 
 ## Indice
@@ -78,8 +78,8 @@ O projeto foi feito utilizando das seguintes tecnologias
 
 ## ⬇ Download
 
-Segue o link para download do APK (android)
+<!-- Segue o link para download do APK (android)
 
-[Download apk](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40rgmellon/mypokedex-23943422436e4cfbb59ab9799209522e-signed.apk)
+[Download apk](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40rgmellon/mypokedex-23943422436e4cfbb59ab9799209522e-signed.apk) -->
 
 Desenvolvido com ♥ por Renan Melo
